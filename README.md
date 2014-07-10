@@ -10,7 +10,7 @@ angularfire-template
 
 3. 프로젝트 폴더로 이동하기
 
-`cd front-angular-app`
+`cd angularfire-template`
 
 
 ## 프로젝트 라이브러리 다운로드하기
@@ -19,6 +19,15 @@ angularfire-template
 
 `npm install bower -g`
 
-3. bower.json 파일을 이용해서 패키지 설치하기
+3. bower.json 파일을 이용해서 패키지 다운받기
 
 `bower install`
+
+## grunt & plugin 설치
+1. Grunt's Command Line Interface 설치하기 <http://gruntjs.com/getting-started>
+
+`npm install grunt-cli -g`
+
+2. package.json 파일을 이용해서 grunt plugin 다운받기
+
+`npm install`
