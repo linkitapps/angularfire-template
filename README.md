@@ -1,0 +1,4 @@
+angularfire-template
+====================
+
+AngularFire Template
