@@ -37,7 +37,7 @@ npm install
 ```
 
 
-## Gruntfile.js 실행
+## Grunt Task 실행 (Gruntfile.js)
 ### 1. 
 ```
 grunt build
