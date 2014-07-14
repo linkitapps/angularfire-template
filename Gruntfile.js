@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint','build']);
-  grunt.registerTask('build',   ['clean:dist','html2js','jshint','concat','less:development','copy:assets']);
+  grunt.registerTask('build',   ['clean-rel','html2js','jshint','concat','less:development','copy:assets']);
   grunt.registerTask('release', ['clean:dist','html2js','uglify','jshint','concat:index','less:development','cssmin:minify','copy:assets','clean:templates']);
   // grunt.registerTask('release', ['clean','html2js','uglify','jshint','karma:unit','concat:index', 'recess:min','copy:assets']);
   // grunt.registerTask('test-watch', ['karma:watch']);
