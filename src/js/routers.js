@@ -16,6 +16,10 @@ angular.module('app.routers', ['ngRoute'])
         templateUrl: 'partials/login.tpl.html',
         controller: 'LoginCtrl'
       })
+      .when('/sign_in', {
+        templateUrl: 'partials/signin.tpl.html',
+        controller: 'SignInCtrl'
+      })
       .when('/d3', {
         templateUrl: 'partials/d3.tpl.html',
         controller: 'D3Ctrl'

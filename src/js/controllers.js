@@ -65,7 +65,7 @@ angular.module('app.controllers', ['ui.bootstrap','firebase'])
 .controller('HeaderCtrl', ['$scope', '$firebase', '$firebaseSimpleLogin', function ($scope, $firebase, $firebaseSimpleLogin) {
   var ref = new Firebase("https://gim-bluelay.firebaseio.com/");
   $scope.auth = $firebaseSimpleLogin(ref);
-}]);
+}])
 
 /*
 {
@@ -92,7 +92,7 @@ angular.module('app.controllers', ['ui.bootstrap','firebase'])
 }
 */
 
-angular.module('app').controller('LoginCtrl', ['$scope', '$firebase', '$firebaseSimpleLogin', function($scope, $firebase, $firebaseSimpleLogin) {
+.controller('LoginCtrl', ['$scope', '$firebase', '$firebaseSimpleLogin', function($scope, $firebase, $firebaseSimpleLogin) {
   var chatRef = new Firebase('https://gim-bluelay.firebaseio.com');
   // var userRef = new Firebase('https://gim-bluelay.firebaseio.com/users');
   // $scope.people = $firebase(userRef);
@@ -131,7 +131,9 @@ angular.module('app').controller('LoginCtrl', ['$scope', '$firebase', '$firebase
       password: password
     });
   };
+}])
 
+.controller('SignInCtrl', ['$scope', function($scope) {
 
 }])
 
@@ -186,7 +188,7 @@ function classes(root) {
 
 d3.select(self.frameElement).style("height", diameter + "px");
 
-}])
+}]);
 
 
 // angular.module('app').controller('AppCtrl', ['$scope', 'i18nNotifications', 'localizedMessages', function($scope, i18nNotifications) {
