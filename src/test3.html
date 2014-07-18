@@ -1,0 +1,24 @@
+<html>
+<head>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+</head>
+<body ng-app>
+  <div clss="container" ng-controller="HttpCtrl">
+
+  </div>
+</body>
+<script type="text/javascript">
+
+  var HttpCtrl = function($scope, $http) {
+    var userToAdd = {
+      name: 'Superhero',
+      email: 'superhero@gmail.com'
+    };
+
+    $http.post('https://api.mongolab.com/api/1/databases/ascrum/collections/users',
+      userToAdd,
+      { params: { apiKey: '4fb51e55e4b02e56a67b0b66' } }
+    );
+  };
+</script>

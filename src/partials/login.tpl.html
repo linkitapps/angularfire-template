@@ -1,0 +1,22 @@
+<h1>loggin page...</h1>
+
+<p class="well">{{user}}</p>
+<p class="well">{{error}}</p>
+<p class="well">{{auth}}</p>
+
+
+
+<div class="well">
+  create user
+  <input type="email" ng-model="newer.email">
+  <input type="password" ng-model="newer.password">
+  <button class="btn btn-default" ng-click="create(newer.email, newer.password)">CreateUser</button>
+</div>
+
+
+<div class="well">
+  login
+  <input type="email" ng-model="any.email">
+  <input type="password" ng-model="any.password">
+  <button class="btn btn-default" ng-click="login(any.email, any.password)">Login</button>
+</div>
