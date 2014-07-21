@@ -4,17 +4,17 @@
     <div class="panel-heading hidden-xs">
       <div class="row">
         <div class="col-sm-6">
-          <h4>Login</h4>
+          <h4>Sign up</h4>
         </div>
         <div class="col-sm-6">
-          <p class="text-right">Don't have an account? Sign up</p>
+          <p class="text-right">Already have an account? Login</p>
         </div>
       </div>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-sm-6 visible-xs">
-          <p class="lead">Login with:</p>
+          <p class="lead">Sign up with:</p>
           <div class="form-group">
             <button type="button" class="btn btn-default">
               <p class="text-info text-left">
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="col-sm-6 hidden-xs">
-          <p class="lead">Login with:</p>
+          <p class="lead">Sign up with:</p>
           <div class="form-group">
             <button type="button" class="btn btn-default btn-block">
               <p class="text-info text-left">
@@ -58,22 +58,21 @@
           </div>
         </div>
         <div class="col-sm-6">
-          <p class="lead">Login With Email:</p>
+          <p class="lead">Sign up With Email:</p>
           <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Email" ng-model="user.email">
+            <input type="text" class="form-control input-lg" placeholder="Email">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control input-lg" placeholder="Password" ng-model="user.password">
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" ng-model="user.rememberMe"> Remember me
-            </label>
+            <input type="text" class="form-control input-lg" placeholder="Password">
           </div>
           <div class="form-group">
-            <button type="button btn-lg" class="btn btn-danger btn-block" ng-click="userLogin()">LOGIN</button>
+            <input type="text" class="form-control input-lg" placeholder="RePassword">
+          </div>
+          <div class="form-group">
+            <button type="button btn-lg" class="btn btn-danger btn-block">GET STARTED!</button>
             <span class="help-block">
-              <a href="mailto:#">Forgot your password?</a>
+              By signing up, you agree to our 
+              <a href="mailto:#">Terms of service</a>
             </span>
           </div>
         </div>

@@ -1,12 +1,10 @@
-angular.module('app.controllers', ['ui.bootstrap','firebase'])
-.controller('MainCtrl', ['$scope', '$http', '$firebase', function($scope, $http, $firebase) {
+angular.module('app.controllers', ['ui.bootstrap', 'firebase', 'app.services'])
 
+.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
   init();
-
   function init() {
     loadCarouselData();
   }
-
   function loadCarouselData() {
     $http
     .get('data/carousel.json')
@@ -15,14 +13,6 @@ angular.module('app.controllers', ['ui.bootstrap','firebase'])
         $scope.carouselList = data.data;
     });
   }
-
-  function loadMoviewData() {
-    // var movieRef = new Firebase("https://imdb-top-250.firebaseio.com/movieList");
-    // Automatically syncs everywhere in realtime
-    //$scope.moviewList = $firebase(movieRef);
-    // console.log($firebase(movieRef));
-  }
-
 }])
 
 .controller('ModalInstanceCtrl', ['$scope', function($scope) {
@@ -133,73 +123,12 @@ angular.module('app.controllers', ['ui.bootstrap','firebase'])
   };
 }])
 
-.controller('SignInCtrl', ['$scope', function($scope) {
-
+.controller('SignInCtrl', ['$scope', 'FireService', function($scope, FireService) {
+//ng-click="auth.$login('google')"
+  $scope.userLogin = function() {
+    // FireService.loginPassword($scope.user);
+    console.log($scope.user);
+    console.log(FireService.loginPassword($scope.user));
+  };
 }])
 
-.controller('D3Ctrl', ['$scope', function($scope) {
-var diameter = 960,
-    format = d3.format(",d"),
-    color = d3.scale.category20c();
-
-var bubble = d3.layout.pack()
-    .sort(null)
-    .size([diameter, diameter])
-    .padding(1.5);
-
-var svg = d3.select("body").append("svg")
-    .attr("width", diameter)
-    .attr("height", diameter)
-    .attr("class", "bubble");
-
-d3.json("/data/flare.json", function(error, root) {
-  var node = svg.selectAll(".node")
-      .data(bubble.nodes(classes(root))
-      .filter(function(d) { return !d.children; }))
-    .enter().append("g")
-      .attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-  node.append("title")
-      .text(function(d) { return d.className + ": " + format(d.value); });
-
-  node.append("circle")
-      .attr("r", function(d) { return d.r; })
-      .style("fill", function(d) { return color(d.packageName); });
-
-  node.append("text")
-      .attr("dy", ".3em")
-      .style("text-anchor", "middle")
-      .text(function(d) { return d.className.substring(0, d.r / 3); });
-});
-
-// Returns a flattened hierarchy containing all leaf nodes under the root.
-function classes(root) {
-  var classes = [];
-
-  function recurse(name, node) {
-    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
-    else classes.push({packageName: name, className: node.name, value: node.size});
-  }
-
-  recurse(null, root);
-  return {children: classes};
-}
-
-d3.select(self.frameElement).style("height", diameter + "px");
-
-}]);
-
-
-// angular.module('app').controller('AppCtrl', ['$scope', 'i18nNotifications', 'localizedMessages', function($scope, i18nNotifications) {
-
-//   $scope.notifications = i18nNotifications;
-
-//   $scope.removeNotification = function (notification) {
-//     i18nNotifications.remove(notification);
-//   };
-
-//   $scope.$on('$routeChangeError', function(event, current, previous, rejection){
-//     i18nNotifications.pushForCurrentRoute('errors.route.changeError', 'error', {}, {rejection: rejection});
-//   });
-// }]);
