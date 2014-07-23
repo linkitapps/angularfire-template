@@ -53,8 +53,8 @@ angular.module('app.controllers', ['ui.bootstrap', 'firebase', 'app.services'])
 }])
 
 .controller('HeaderCtrl', ['$scope', '$firebase', '$firebaseSimpleLogin', function ($scope, $firebase, $firebaseSimpleLogin) {
-  var ref = new Firebase("https://gim-bluelay.firebaseio.com/");
-  $scope.auth = $firebaseSimpleLogin(ref);
+  // var ref = new Firebase("https://gim-bluelay.firebaseio.com/");
+  // $scope.auth = $firebaseSimpleLogin(ref);
 }])
 
 /*
